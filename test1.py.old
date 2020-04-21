@@ -1,0 +1,89 @@
+import RPi.GPIO as GPIO
+# Configure A-D pins for the 2x sn74141 chip
+# These should be GPIO no not pin no
+A1 = 5
+B1 = 17
+C1 = 27
+D1 = 10
+
+A2 = 9
+B2 = 11
+C2 = 5
+D2 = 6
+
+outputList = (A1,B1,C1,D1,A2,B2,C2,D2)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(outputList,GPIO.OUT)
+
+def displayDigit(tube, digit):
+    if tube == 1:
+        A = A1
+        B = B1
+        C = C1
+        D = D1
+    elif tube == 2:
+        A = A2
+        B = B2
+        C = C2
+        D = D2
+
+    if digit == 0:
+        print(A)
+        GPIO.output(A,GPIO.LOW)
+        GPIO.output(B,GPIO.LOW)
+        GPIO.output(C,GPIO.LOW)
+        GPIO.output(D,GPIO.LOW)
+    elif digit == 1:
+        GPIO.output(A,GPIO.HIGH)
+        GPIO.output(B,GPIO.LOW)
+        GPIO.output(C,GPIO.LOW)
+        GPIO.output(D,GPIO.LOW)
+    elif digit == 2:
+        GPIO.output(A,GPIO.LOW)
+        GPIO.output(B,GPIO.HIGH)
+        GPIO.output(C,GPIO.LOW)
+        GPIO.output(D,GPIO.LOW)
+    elif digit == 3:
+        GPIO.output(A,GPIO.HIGH)
+        GPIO.output(B,GPIO.HIGH)
+        GPIO.output(C,GPIO.LOW)
+        GPIO.output(D,GPIO.LOW)
+    elif digit == 4:
+        GPIO.output(A,GPIO.LOW)
+        GPIO.output(B,GPIO.LOW)
+        GPIO.output(C,GPIO.HIGH)
+        GPIO.output(D,GPIO.LOW)
+    elif digit == 5:
+        GPIO.output(A,GPIO.HIGH)
+        GPIO.output(B,GPIO.LOW)
+        GPIO.output(C,GPIO.HIGH)
+        GPIO.output(D,GPIO.LOW)
+    elif digit == 6:
+        GPIO.output(A,GPIO.LOW)
+        GPIO.output(B,GPIO.HIGH)
+        GPIO.output(C,GPIO.HIGH)
+        GPIO.output(D,GPIO.LOW)
+    elif digit == 7:
+        GPIO.output(A,GPIO.HIGH)
+        GPIO.output(B,GPIO.HIGH)
+        GPIO.output(C,GPIO.HIGH)
+        GPIO.output(D,GPIO.LOW)
+    elif digit == 8:
+        GPIO.output(A,GPIO.LOW)
+        GPIO.output(B,GPIO.LOW)
+        GPIO.output(C,GPIO.LOW)
+        GPIO.output(D,GPIO.HIGH)
+    elif digit == 9:
+        GPIO.output(A,GPIO.HIGH)
+        GPIO.output(B,GPIO.LOW)
+        GPIO.output(C,GPIO.LOW)
+        GPIO.output(D,GPIO.HIGH)
+    elif digit == "off":
+        GPIO.output(A,GPIO.HIGH)
+        GPIO.output(B,GPIO.HIGH)
+        GPIO.output(C,GPIO.HIGH)
+        GPIO.output(D,GPIO.HIGH)
+
+
+
+
