@@ -37,9 +37,8 @@ def writeDigit(value):
 
 
 def displayDigit(tube, digit):
-    print('tube - ',tube)
-    print('digit', digit)
-    type(tube)
+    tube = int(tube)
+    digit = int(digit)
     if tube == 1:
         A = A1
         B = B1
