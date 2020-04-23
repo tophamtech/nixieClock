@@ -24,8 +24,17 @@ D4 = 21
 
 outputList = (A1,B1,C1,D1,A2,B2,C2,D2,A3,B3,C3,D3,A4,B4,C4,D4)
 GPIO.setmode(GPIO.BCM)
-
 GPIO.setup(outputList,GPIO.OUT)
+
+# digits passed in as string. -(dash) if the tube should be off
+def writeDigit(value):
+    for i in range(4):
+        targetValue = value[i:i+1]
+        if targetValue == '-':
+            displayDigit(i+1,"off")
+        else:
+            displayDigit(i+1, targetValue)
+
 
 def displayDigit(tube, digit):
     if tube == 1:

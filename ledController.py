@@ -1,5 +1,7 @@
 # Tested, fully working 24/11/19
 
+# newLed.writeLed('yellow',1,'off')
+
 import smbus as smbus
 bus = smbus.SMBus(1)
 bus.write_byte_data(0x20, 0x00, 0x00)
