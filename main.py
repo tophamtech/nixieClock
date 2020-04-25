@@ -38,7 +38,7 @@ def tubeLeds():
 while 1 == 1:
     tubeController.writeDigit(datetime.now().strftime('%H%M'))
     tubeLeds()
-    time.sleep(5000)
+    time.sleep(5)
     tubeController.writeDigit(transportController.busTimeToArrival())
     print('writing bus times')
-    time.sleep(5000)
+    time.sleep(5)
