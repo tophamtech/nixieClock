@@ -26,13 +26,13 @@ def tubeLeds():
         ledController.writeLed('red',1,'on')
     if jubileeStatus == 0:
         # show first column green
-        ledController.writeLed('green',1,'on')
+        ledController.writeLed('green',2,'on')
     elif 1 <= jubileeStatus <= 4:
         # show first column orange
-        ledController.writeLed('yellow',1,'on')
+        ledController.writeLed('yellow',2,'on')
     else:
         # show first column red
-        ledController.writeLed('red',1,'on')
+        ledController.writeLed('red',2,'on')
 
 
 while 1 == 1:
@@ -40,4 +40,5 @@ while 1 == 1:
     tubeLeds()
     time.sleep(5000)
     tubeController.writeDigit(transportController.busTimeToArrival())
+    print('writing bus times')
     time.sleep(5000)

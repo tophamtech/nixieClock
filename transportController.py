@@ -14,6 +14,7 @@ def busTimeToArrival():
     difTime = formattedDateTime - datetime.utcnow()
     difMin = (difTime.total_seconds()/60)
     difMin = int(difMin)
+    print(difMin)
     return difMin
 
 def tubeStatus(line):
