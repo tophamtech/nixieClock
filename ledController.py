@@ -17,6 +17,17 @@ bus.write_byte_data(0x24, 0x01, 0x00)
 # # Turn on all blue
 # bus.write_byte_data(0x24, 0x15, 0x0F)
 
+def writeCol(col, state):
+    writeLed('red',col,state)
+    writeLed('yellow',col,state)
+    writeLed('green',col,state)
+    writeLed('blue',col,state)
+
+def clearAll():
+    writeLed('red',0,'off')
+    writeLed('yellow',0,'off')
+    writeLed('green',0,'off')
+    writeLed('blue',0,'off')
 
 def writeLed(colour, position, state):
     if colour == 'red':
@@ -49,6 +60,13 @@ def writeLed(colour, position, state):
             if state == 'off':
                 bitmask = bin(int("00001000",2))
                 futureState = int(currentState,2) | int(bitmask,2)
+        if position == 0:
+            if state == 'on':
+                bitmask = bin(int("11111111",2))
+                futureState = int(currentState,2) & int(bitmask,2)
+            if state == 'off':
+                bitmask = bin(int("00000000",2))
+                futureState = int(currentState,2) | int(bitmask,2)
         bus.write_byte_data(0x20, 0x15, futureState)
     elif colour == 'yellow':
         currentState = bin(bus.read_byte_data(0x20, 0x15))
@@ -79,6 +97,13 @@ def writeLed(colour, position, state):
                 futureState = int(currentState,2) & int(bitmask,2)
             if state == 'off':
                 bitmask = bin(int("10000000",2))
+                futureState = int(currentState,2) | int(bitmask,2)
+        if position == 0:
+            if state == 'on':
+                bitmask = bin(int("11111111",2))
+                futureState = int(currentState,2) & int(bitmask,2)
+            if state == 'off':
+                bitmask = bin(int("00000000",2))
                 futureState = int(currentState,2) | int(bitmask,2)
         bus.write_byte_data(0x20, 0x15, futureState)
     if colour == 'green':
@@ -111,6 +136,13 @@ def writeLed(colour, position, state):
             if state == 'off':
                 bitmask = bin(int("00000001",2))
                 futureState = int(currentState,2) | int(bitmask,2)
+        if position == 0:
+            if state == 'on':
+                bitmask = bin(int("11111111",2))
+                futureState = int(currentState,2) & int(bitmask,2)
+            if state == 'off':
+                bitmask = bin(int("00000000",2))
+                futureState = int(currentState,2) | int(bitmask,2)
         bus.write_byte_data(0x24, 0x15, futureState)
     elif colour == 'blue':
         currentState = bin(bus.read_byte_data(0x24, 0x15))
@@ -141,6 +173,13 @@ def writeLed(colour, position, state):
                 futureState = int(currentState,2) & int(bitmask,2)
             if state == 'off':
                 bitmask = bin(int("00010000",2))
+                futureState = int(currentState,2) | int(bitmask,2)
+        if position == 0:
+            if state == 'on':
+                bitmask = bin(int("11111111",2))
+                futureState = int(currentState,2) & int(bitmask,2)
+            if state == 'off':
+                bitmask = bin(int("00000000",2))
                 futureState = int(currentState,2) | int(bitmask,2)
         bus.write_byte_data(0x24, 0x15, futureState)
 

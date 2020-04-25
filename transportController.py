@@ -23,7 +23,3 @@ def tubeStatus(line):
     for lineElement in parsedData:
         if lineElement["id"] == line.lower():
             return (lineElement["lineStatuses"][0]["statusSeverity"])
-
-print(busTimeToArrival())
-print tubeStatus("northern")
-print tubeStatus("jubilee")
