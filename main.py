@@ -9,14 +9,6 @@ tubeController.writeDigit('----')
 ledController.clearAll()
 
 
-while 1 == 1:
-    tubeController.writeDigit(datetime.now().strftime('%H%M'))
-    tubeLeds()
-    time.sleep(5000)
-    tubeController.writeDigit(transportController.busTimeToArrival())
-    time.sleep(5000)
-
-
 # tubeController.writeDigit('4276')
 
 def tubeLeds():
@@ -41,3 +33,11 @@ def tubeLeds():
     else:
         # show first column red
         ledController.writeLed('red',1,'on')
+
+
+while 1 == 1:
+    tubeController.writeDigit(datetime.now().strftime('%H%M'))
+    tubeLeds()
+    time.sleep(5000)
+    tubeController.writeDigit(transportController.busTimeToArrival())
+    time.sleep(5000)
