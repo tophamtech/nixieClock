@@ -14,6 +14,7 @@ ledController.clearAll()
 def tubeLeds():
     northernStatus = transportController.tubeStatus("northern")
     jubileeStatus = transportController.tubeStatus("jubilee")
+    centralStatus = transportController.tubeStatus("central")
     ledController.clearAll
     if northernStatus == 0:
         # show first column green
@@ -33,6 +34,15 @@ def tubeLeds():
     else:
         # show first column red
         ledController.writeLed('red',2,'on')
+    if centralStatus == 0:
+        # show first column green
+        ledController.writeLed('green',3,'on')
+    elif 1 <= centralStatus <= 4:
+        # show first column orange
+        ledController.writeLed('yellow',3,'on')
+    else:
+        # show first column red
+        ledController.writeLed('red',3,'on')
 
 
 while 1 == 1:
