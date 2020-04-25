@@ -14,8 +14,9 @@ def busTimeToArrival():
     difTime = formattedDateTime - datetime.utcnow()
     difMin = (difTime.total_seconds()/60)
     difMin = int(difMin)
-    print(difMin.rjust(4,'0'))
-    return difMin.rjust(4,'0')
+    print('Time to arrival:')
+    print(str(difMin))
+    return str(difMin).zfill(4)
 
 def tubeStatus(line):
     url = "https://api.tfl.gov.uk/line/mode/tube/status"

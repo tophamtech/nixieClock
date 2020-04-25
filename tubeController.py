@@ -62,7 +62,6 @@ def displayDigit(tube, digit):
         D = D4
 
     if digit == 0:
-        print(A)
         GPIO.output(A,GPIO.LOW)
         GPIO.output(B,GPIO.LOW)
         GPIO.output(C,GPIO.LOW)
