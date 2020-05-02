@@ -44,23 +44,23 @@ def tubeStatus(line):
         return(99)
 
 def setTubeLed(line)
-# Set which column the led should illuminate 
-if line == 'northern':
-    col = 1
-elif line == 'jubilee':
-    col = 2
-elif line == 'central':
-    col = 3
+    # Set which column the led should illuminate 
+    if line == 'northern':
+        col = 1
+    elif line == 'jubilee':
+        col = 2
+    elif line == 'central':
+        col = 3
 
-if tubeStatus(line) == 0:
-    # show column green
-    ledController.writeLed('green',col,'on')
-elif 1 <= tubeStatus(line) <= 4:
-    # show column orange
-    ledController.writeLed('yellow',col,'on')
-elif 5 <= tubeStatus(line) <=10:
-    # show column red
-    ledController.writeLed('red',col,'on')
-else:
-    # show blue if error
-    ledController.writeLed('blue',col,'on')
+    if tubeStatus(line) == 0:
+        # show column green
+        ledController.writeLed('green',col,'on')
+    elif 1 <= tubeStatus(line) <= 4:
+        # show column orange
+        ledController.writeLed('yellow',col,'on')
+    elif 5 <= tubeStatus(line) <=10:
+        # show column red
+        ledController.writeLed('red',col,'on')
+    else:
+        # show blue if error
+        ledController.writeLed('blue',col,'on')
