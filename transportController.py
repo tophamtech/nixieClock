@@ -43,7 +43,7 @@ def tubeStatus(line):
         # Return error
         return(99)
 
-def setTubeLed(line)
+def setTubeLed(line):
     # Set which column the led should illuminate 
     if line == 'northern':
         col = 1
