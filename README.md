@@ -5,7 +5,7 @@
 Nixie tubes are used for displaying digits, usually 0-9. They were used before LCD screens to create displays, and because of the way they work they have an awesome glow about them. This project uses original tubes (manufacturing dates from 1971-1979) to create a clock on a custom made PCB, with timers and LEDs for public transport alerting. Note, nixie tubes use ~180v to display the digits so this board deals with some high voltages, watch out!
 
 
-<img src="img/final_board.JPG" height="397" width="643" >
+<img src="img/final_board.JPG" width="643" >
  
 
 ## The Board
