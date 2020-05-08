@@ -12,7 +12,7 @@ Nixie tubes are used for displaying digits, usually 0-9. They were used before L
 
 The board was designed by myself using a tool called EasyEDA then sent off to JLCPCB to be manufactured. This was fairly cheap (~$10 for 5 boards) and as the EasyEDA tool is made by JLC it integrates very nicely. All the files for the board are in the pcb folder. This includes the 2 json files that can be imported into EasyEDA to create a fully editable version of the board, as well as the gerber that was sent off for manufacturing. My advise would be to import into EasyEDA rather than using the gerber as this gives you more flexibility, and let's you adjust the silk screen so the board comes back with your name on it!
 
-![Image of board](pcb/pcb_board.png)
+![Image of board](pcb/pcbBoard.png)
 
 ## The Components
 
